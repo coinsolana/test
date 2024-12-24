@@ -1,25 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const pillsContainer = document.getElementById('pills');
-  
-  // Criando 5 pílulas
-  for (let i = 0; i < 5; i++) {
-    const pill = document.createElement('div');
-    pill.classList.add('pill');
-    
-    // Adiciona a pílula na tela
-    pillsContainer.appendChild(pill);
-  }
+    const pillsContainer = document.getElementById('pills');
+    for (let i = 0; i < 5; i++) {
+        const pill = document.createElement('div');
+        pill.classList.add('pill');
+        pillsContainer.appendChild(pill);
 
-  // Função para mover as pílulas aleatoriamente
-  function movePills() {
-    const pills = document.querySelectorAll('.pill');
-    pills.forEach(pill => {
-      const randomX = Math.random() * window.innerWidth;
-      const randomY = Math.random() * window.innerHeight;
-      pill.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        // Adicionando animação de pulso
+        pill.addEventListener('mouseenter', () => {
+            pill.style.transform = 'scale(1.2)';
+            pill.style.boxShadow = '0 0 25px rgba(0, 255, 0, 1)';
+        });
+
+        pill.addEventListener('mouseleave', () => {
+            pill.style.transform = 'scale(1)';
+            pill.style.boxShadow = '0 0 15px rgba(0, 255, 0, 0.8)';
+        });
+    }
+
+    // Efeito interativo para o botão de compra
+    const buyButton = document.getElementById('buy-button');
+    buyButton.addEventListener('click', () => {
+        buyButton.style.backgroundColor = '#ff0044';
+        buyButton.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+            buyButton.style.transform = 'scale(1)';
+            buyButton.style.backgroundColor = '#ff7300';
+        }, 500);
     });
-  }
-
-  // Move as pílulas a cada 2 segundos
-  setInterval(movePills, 2000);
 });
