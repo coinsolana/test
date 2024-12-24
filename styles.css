@@ -1,126 +1,113 @@
+/* Reset para garantir um layout limpo */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Corpo do site */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f3f4f6;
-  color: #333;
-  padding: 20px;
-  overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #1c1c1c, #3b3b3b);
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
+/* Cabeçalho */
 header h1 {
-  font-size: 3rem;
-  color: #1a1a1a;
-  font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7), 0 0 10px rgba(0, 255, 0, 0.7);
 }
 
-header p {
-  font-size: 1.5rem;
-  color: #666;
+header .tagline {
+    font-size: 1.2em;
+    color: #00ff00;
 }
 
-#contract {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.contract-info h2 {
-  font-size: 1.8rem;
-  color: #007bff;
-}
-
-#actions .social-buttons {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-
-button {
-  background-color: #28a745;
-  border: none;
-  color: #fff;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-
-.twitter-btn {
-  background-color: #1da1f2;
-}
-
-.dex-btn {
-  background-color: #ff5733;
-}
-
-.buy-btn {
-  background-color: #d9534f;
-  padding: 20px 40px;
-  font-size: 1.5rem;
-  width: 100%;
-  transition: all 0.3s ease;
-}
-
-.buy-btn:hover {
-  background-color: #c9302c;
-}
-
-#supply {
-  text-align: center;
-  margin-top: 40px;
-}
-
-footer {
-  margin-top: 40px;
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-#pills {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+/* Container de Pílulas */
+.pill-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 .pill {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(to right, green 50%, white 50%);
-  border-radius: 50%;
-  animation: pill-move 4s infinite ease-in-out;
-  margin: 10px;
+    width: 60px;
+    height: 30px;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #00ff00, #ffffff);
+    margin: 10px;
+    animation: pulse 1.5s ease-in-out infinite;
 }
 
-@keyframes pill-move {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(150px) scale(1.2);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Barra de Progresso */
+#progress-bar-container {
+    width: 100%;
+    height: 30px;
+    background: #444;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+#progress-bar {
+    width: 0;
+    height: 100%;
+    background: #00ff00;
+    animation: progress 5s infinite;
+}
+
+@keyframes progress {
+    0% { width: 0; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+}
+
+/* Botões */
+.buy-button, .twitter-btn, .dex-btn {
+    background-color: #ff7300;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.buy-button:hover, .twitter-btn:hover, .dex-btn:hover {
+    background-color: #ff0044;
+    transform: scale(1.1);
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+/* Animações nos Botões */
+.buy-button:active {
+    transform: scale(0.9);
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .pill-container {
+        flex-direction: column;
+    }
+    .pill {
+        width: 40px;
+        height: 20px;
+    }
+    header h1 {
+        font-size: 2.5em;
+    }
 }
