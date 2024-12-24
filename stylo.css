@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f3f4f6;
+  color: #333;
+  padding: 20px;
+  overflow: hidden;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #1a1a1a;
+  font-family: 'Roboto', sans-serif;
+}
+
+header p {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+#contract {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contract-info h2 {
+  font-size: 1.8rem;
+  color: #007bff;
+}
+
+#actions .social-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #28a745;
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.twitter-btn {
+  background-color: #1da1f2;
+}
+
+.dex-btn {
+  background-color: #ff5733;
+}
+
+.buy-btn {
+  background-color: #d9534f;
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: #c9302c;
+}
+
+#supply {
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+#pills {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.pill {
+  width: 30px;
+  height: 30px;
+  background-color: #28a745;
+  border-radius: 50%;
+  animation: pill-move 4s infinite ease-in-out;
+}
+
+@keyframes pill-move {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(150px) scale(1.2);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
