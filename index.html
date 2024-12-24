@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meme Coin</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnxietyCoin</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
     <div class="container">
-      <h1>Meme Coin</h1>
-      <p>Invest in the future of Meme Coins.</p>
+        <!-- Header com nome do projeto e menu -->
+        <header>
+            <h1>AnxietyCoin</h1>
+            <p class="tagline">Invest in your panic, live the future!</p>
+        </header>
+
+        <!-- Animações de Pílulas -->
+        <div id="pills" class="pill-container"></div>
+
+        <!-- Informações do Token -->
+        <div class="token-details">
+            <h2>Token Contract:</h2>
+            <p id="contract-address">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+        </div>
+
+        <!-- Barra de Progresso -->
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <!-- Botões -->
+        <div class="buttons">
+            <button id="buy-button" class="buy-button">BUY NOW</button>
+            <div class="social-buttons">
+                <button class="twitter-btn">Twitter</button>
+                <button class="dex-btn">DEX</button>
+            </div>
+        </div>
+
+        <!-- Música de Fundo -->
+        <audio id="background-music" autoplay loop>
+            <source src="music/cyberpunk_theme.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
     </div>
-  </header>
 
-  <section id="contract">
-    <div class="contract-info">
-      <h2>Token Contract</h2>
-      <p>Contract Address: <strong>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</strong></p>
-    </div>
-  </section>
-
-  <section id="actions">
-    <div class="social-buttons">
-      <button class="twitter-btn">Follow on Twitter</button>
-      <button class="dex-btn">Buy on DEX</button>
-    </div>
-    <div class="buy-token">
-      <button class="buy-btn">BUY TOKEN</button>
-    </div>
-  </section>
-
-  <section id="supply">
-    <p><strong>Supply:</strong> pump.fun</p>
-  </section>
-
-  <footer>
-    <p>Tokenomics</p>
-  </footer>
-
-  <div id="pills"></div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
